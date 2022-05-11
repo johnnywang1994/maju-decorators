@@ -1,0 +1,20 @@
+{
+  "name": "tsup-template",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./src/**/*",
+    "dev": "watch 'yarn lint' ./src",
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@johnnywang/eslint-config": "^1.0.4",
+    "eslint": "^8.9.0",
+    "tsup": "^5.11.13",
+    "typescript": "^4.5.5",
+    "watch": "^1.0.2"
+  }
+}

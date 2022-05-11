@@ -1,0 +1,44 @@
+// https://www.typescriptlang.org/tsconfig
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "allowJs": true,
+    "importHelpers": true,
+    "strictPropertyInitialization": false,
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    // Specify the base directory to resolve non-relative module names
+    "baseUrl": ".",
+    // Built-In global type definitions
+    // eg. need "dom", "dom.iterable" if your code work on browser
+    "lib": [
+      "esnext",
+      "es5",
+      "dom",
+      "es2015", "es2015.core", "es2015.collection"
+    ],
+    // Specify a set of entries that re-map imports to additional lookup locations.
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "index.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": true
+}

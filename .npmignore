@@ -1,0 +1,3 @@
+tsup.config.js
+/src/
+.eslintrc.cjs
