@@ -1,6 +1,6 @@
 # Maju Decorators
 
-This is a decorators utils created mostly by [core-decorators](https://www.npmjs.com/package/core-decorators), just fixed some features and implements of `decorate`, `time` decorator. & Removes deprecated decorators.
+This is a decorators utils created mostly by [core-decorators](https://www.npmjs.com/package/core-decorators), just fixed some features and implements of `decorate`, `time` decorator. & Removes deprecated decorators, since `core-decorators` is now set to `read-only`.
 
 
 ## Install
