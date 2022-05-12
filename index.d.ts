@@ -26,6 +26,10 @@ export const extendDescriptor: PropertyOrMethodDecorator;
 
 export const lazyInit: PropertyDecorator;
 
+export function getter(func: Function, ...args: any[]): MethodDecorator;
+
+export function setter(func: Function, ...args: any[]): MethodDecorator;
+
 export function decorate(func: Function, ...args: any[]): MethodDecorator;
 
 export function time(prefix: string, console?: Console): MethodDecorator;
