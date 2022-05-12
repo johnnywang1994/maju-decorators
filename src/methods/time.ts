@@ -25,8 +25,12 @@ function timeDecorator({ target, key, fn }, prefix = null, console = defaultCons
     count++
     console.time(label)
     // support for async await
-    const p = Promise.resolve(fn.apply(this, args))
-    return p.then(() => console.timeEnd(label))
+    const p = fn.apply(this, args)
+    if (!!p && typeof p === 'function') {
+      return Promise.resolve(p).then(() => console.timeEnd(label))
+    }
+    console.timeEnd(label)
+    return p
   }
 }
 
