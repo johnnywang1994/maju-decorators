@@ -1,6 +1,6 @@
 {
   "name": "maju-decorators",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Decorators utils created mostly by [core-decorators](https://www.npmjs.com/package/core-decorators)",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
