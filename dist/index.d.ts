@@ -22,4 +22,8 @@ declare function extendDescriptor(...args: any[]): any;
 
 declare function lazyInit(...args: any[]): any;
 
-export { autobind, configurable, decorate, enumerable, extendDescriptor, lazyInit as nonconfigurable, lazyInit as nonenumerable, lazyInit as readonly, time };
+declare function getter$1(...args: any[]): any;
+
+declare function getter(...args: any[]): any;
+
+export { autobind, configurable, decorate, enumerable, extendDescriptor, getter$1 as getter, lazyInit as nonconfigurable, lazyInit as nonenumerable, lazyInit as readonly, getter as setter, time };

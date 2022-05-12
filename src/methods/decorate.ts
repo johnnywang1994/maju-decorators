@@ -1,9 +1,9 @@
 import { decorate as _decorate, createDefaultSetter } from '../utils'
-const { defineProperty } = Object
+const { defineProperty, getOwnPropertyDescriptor } = Object
 
 export function handleDescriptor(target, key, descriptor, [decorator, ...args]) {
   if (descriptor === undefined)
-    descriptor = Object.getOwnPropertyDescriptor(target, key)
+    descriptor = getOwnPropertyDescriptor(target, key)
 
   const { configurable, enumerable, writable } = descriptor
   const originalGet = descriptor.get

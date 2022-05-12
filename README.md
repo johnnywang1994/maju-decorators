@@ -98,9 +98,77 @@ class A {
   }
 }
 
+const a = new A();
+a.run();
 // log1
 // log2
 // test start
 // A.run-0: 1.014ms
 // test end
+```
+
+
+### getter/setter
+
+add to getter, setter of property, both like the method `decorate` decorator, will receive a context to use.
+
+- `getter`: must return a value
+- `setter`: must pass a newValue to original setter
+
+```js
+import { getter } from 'maju-decorators'
+
+function getterDeco1({ fn: originalGet }) {
+  return function() {
+    console.log('getter deco1', this)
+    // getter must return a value
+    return originalGet.call(this);
+  }
+}
+
+function setterDeco1({ fn: originalSet }) {
+  return function(newValue) {
+    console.log('setter deco1', this);
+    // you can edit the original newValue here
+    newValue += 1
+    // setter must pass newValue
+    return originalSet.call(this, newValue);
+  }
+}
+
+class A {
+  @getter(getterDeco1)
+  get foo() {
+    console.log('get foo');
+    return 'hello'
+  }
+
+  @setter(setterDeco1)
+  set foo(value) {
+    console.log('set foo', value);
+  }
+}
+
+const a = new A();
+console.log(a.foo);
+// getter deco1 A {}
+// get foo
+// hello
+
+a.foo = 0;
+// setter deco1 A {}
+// set foo 1
+```
+
+about the getter decorator, we can also edit the getter value before return
+
+```js
+function getterDeco1({ fn: originalGet }) {
+  return function() {
+    console.log('getter deco1', this)
+    // edit value before return
+    const value = originalGet.call(this)
+    return `${value} bar`
+  }
+}
 ```
