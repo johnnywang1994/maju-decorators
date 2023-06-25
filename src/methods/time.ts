@@ -26,7 +26,7 @@ function timeDecorator({ target, key, fn }, prefix = null, console = defaultCons
     console.time(label)
     // support for async await
     const p = fn.apply(this, args)
-    if (!!p && typeof p === 'function') {
+    if (!!p && typeof p.then === 'function') {
       return Promise.resolve(p).then(() => console.timeEnd(label))
     }
     console.timeEnd(label)
